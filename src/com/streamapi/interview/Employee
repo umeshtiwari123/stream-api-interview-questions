@@ -1,0 +1,49 @@
+package com.streams.prgms;
+
+import java.util.Objects;
+
+public class Employee {
+    private double empSalary;
+    private String empName;
+
+    public Employee(double empSalary, String empName) {
+        this.empName = empName;
+        this.empSalary = empSalary;
+    }
+
+    public double getEmpSalary() {
+        return empSalary;
+    }
+
+    public void setEmpSalary(double empSalary) {
+        this.empSalary = empSalary;
+    }
+
+    public String getEmpName() {
+        return empName;
+    }
+
+    public void setEmpName(String empName) {
+        this.empName = empName;
+    }
+
+    @Override
+    public String toString() {
+
+        return "empSalary : " + empSalary + " : empName : " + empName;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        Employee employee = (Employee) obj;
+        if (this.empSalary == employee.empSalary && this.empName.equals(employee.empName)) {
+            return true;
+        } else
+            return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(empName, empSalary);
+    }
+}
