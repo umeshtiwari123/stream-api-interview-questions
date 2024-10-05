@@ -1,0 +1,16 @@
+package com.streams;
+
+import java.util.Arrays;
+import java.util.List;
+
+public class EvenNumbersSum {
+    
+    public static void main(String[] args) {
+    
+        List<Integer> numList = Arrays.asList(12,28,37,6,23,21);
+
+        int sumOfNumList = numList.stream().filter(e->e%2==0).mapToInt(Integer::intValue).sum();
+
+        System.out.println(sumOfNumList);
+    }
+}
